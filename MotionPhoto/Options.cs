@@ -1,23 +1,16 @@
 ﻿using CommandLine;
 using CommandLine.Text;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MotionPhoto
 {
     public class Options
     {
-        [Option('s', "secrets", Required = false,
+        [Option('s', "secrets", Required = false, DefaultValue = "client_secret.json",
           HelpText = "Specify filename with Google credentials")]
         public string SecretsFilename { get; set; }
 
-        [Option('t', "text", Required = false,
-          HelpText = "Specify filename with Google credentials as text (replace \" with ')")]
-        public string SecretsText { get; set; }
-
         [Option('u', "url", Required = true,
-         HelpText = "D-Link base Url")]
+         HelpText = "D-Link base Url to camera (e.g. https://mycamera.com:30000)")]
         public string DLinkUrl { get; set; }
 
         [Option('l', "login", Required = true,

@@ -21,18 +21,8 @@ namespace MotionPhoto
                 });
                 var startMessage = "Start webcam monitor motion monitor";
                 logMessage(startMessage);
-                if(options.SecretsFilename != null && options.SecretsText != null)
-                {
-                    logMessage("Client secret cannot be provided as a file and text at the same time.");
-                    return;
-                }
                 if (options.SecretsFilename != null)
                     Picasa.ClientSecretFilename = options.SecretsFilename;
-                else if (options.SecretsText != null)
-                {
-                    Picasa.ClientSecretFilename = "client_secret_text.json";
-                    File.WriteAllText(Picasa.ClientSecretFilename, options.SecretsText);
-                }
                 var picasa = new Picasa();
                 try
                 {

@@ -31,7 +31,7 @@ namespace MotionPhoto
                 using (var client = new HttpClient(handler))
                 {
                     client.Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite);
-                    var url = "https://" + this.baseUrl + "/config/notify_stream.cgi";
+                    var url = this.baseUrl + "/config/notify_stream.cgi";
                     var request = new HttpRequestMessage(HttpMethod.Get, url);
                     using (var response = await client.SendAsync(
                         request,
@@ -82,7 +82,7 @@ namespace MotionPhoto
                 using (var client = new HttpClient(handler))
                 {
                     client.Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite);
-                    var url = "https://" + this.baseUrl + "/image/jpeg.cgi";
+                    var url = this.baseUrl + "/image/jpeg.cgi";
                     var request = new HttpRequestMessage(HttpMethod.Get, url);
                     using (var response = await client.SendAsync(
                         request,
